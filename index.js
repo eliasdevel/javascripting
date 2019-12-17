@@ -1,6 +1,13 @@
 var express = require('express');
 var app = express();
 
+app.set('view engine', 'pug');
+
+
+app.get('/pug', function (req, res) {
+    res.render('test', { title: 'Hey', message: 'Hello there!'});
+});
+
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
